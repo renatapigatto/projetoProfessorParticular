@@ -1,0 +1,144 @@
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+
+public class InfoAula {
+	private String diaSemana; //obrigatório, checar se null
+	private LocalTime horaInicial; //obrigatório, checar se null 
+	private int duracaoAula; //obrigatório, checar se 0
+	private float valorHoraAula; //obrigatório, checar se 0
+	private LocalDate dataInicial; //obrigatório, checar se null
+	private LocalDate dataFinal; //obrigatório, checar se null
+	private LocalAula localAula; //obrigatório, checar se null
+	private List<DiarioDeAula> diariosDeAula = new ArrayList<DiarioDeAula>();//navegabilidade infoAula > DiarioDeAula
+
+	
+	//construtor
+	public InfoAula(String diaSemana, LocalTime horaInicial, int duracaoAula, float valorHoraAula, LocalDate dataInicial, LocalDate dataFinal, LocalAula localAula) {
+		setDiaSemana(diaSemana);
+		setHoraInicial(horaInicial); 
+		setDuracaoAula(duracaoAula);
+		setValorHoraAula(valorHoraAula);
+		setDataInicial(dataInicial);
+		setDataFinal(dataFinal);
+		setLocalAula(localAula);
+	}
+	
+	
+	//getters & setters
+	public String getDiaSemana() {
+		return diaSemana;
+	}
+	
+	
+	public void setDiaSemana(String diaSemana) {
+		if (diaSemana == null) {
+			throw new RuntimeException("Erro InfoAula: diaSemana inválido.");
+		}else {
+			this.diaSemana = diaSemana;
+		}
+	}
+	
+	
+	public LocalTime getHoraInicial() {
+		return horaInicial;
+	}
+	
+	
+	public void setHoraInicial(LocalTime horaInicial) {
+		if (horaInicial == null) {
+			throw new RuntimeException("Erro InfoAula: horaInicial inválido.");
+		}else {
+			this.horaInicial = LocalTime.of(0, 0);//o tipo LocalTime exige um valor, ver como inicializar
+		}
+	}
+	
+	
+	public int getDuracaoAula() {
+		return duracaoAula;
+	}
+	
+	
+	public void setDuracaoAula(int duracaoAula) {
+		if (duracaoAula == 0) {
+			throw new RuntimeException("Erro InfoAula: duracaoAula inválido.");
+		}else {
+			this.duracaoAula = duracaoAula;
+		}
+	}
+	
+	
+	public float getValorHoraAula() {
+		return valorHoraAula;
+	}
+	
+	
+	public void setValorHoraAula(float valorHoraAula) {
+		if (valorHoraAula == 0) {
+			throw new RuntimeException("Erro InfoAula: valorHoraAula inválido.");
+		}else {
+			this.valorHoraAula = valorHoraAula;
+		}
+	}
+	
+	
+	public LocalDate getDataInicial() {
+		return dataInicial;
+	}
+
+
+	public void setDataInicial(LocalDate dataInicial) {
+		if (dataInicial == null) {
+			throw new RuntimeException("Erro InfoAula: dataInicial inválido.");
+		}else {
+			this.dataInicial = LocalDate.of(0, 0, 0);//o tipo LocalDate exige um valor, ver como inicializar
+		}
+	}
+
+
+	public LocalDate getDataFinal() {
+		return dataFinal;
+	}
+
+
+	public void setDataFinal(LocalDate dataFinal) {
+		if (dataFinal == null) {
+			throw new RuntimeException("Erro InfoAula: dataFinal inválido.");
+		}else {
+			this.dataFinal = LocalDate.of(0, 0, 0); //o tipo LocalDate exige um valor, ver como inicializar
+		}
+	}
+
+
+	public LocalAula getLocalAula() {
+		return localAula;
+	}
+
+
+	public void setLocalAula(LocalAula localAula) {
+		if (localAula == null) {
+			throw new RuntimeException("Erro InfoAula: LocalAula inválido.");
+		}else {
+			this.localAula = localAula;
+		}
+		
+	}
+
+
+	public List<DiarioDeAula> getDiariosDeAula() {
+		return diariosDeAula;
+	}
+
+	public void addDiarioDeAula(DiarioDeAula diarioDeAula) {
+		if(diarioDeAula == null) {
+			throw new RuntimeException("Erro RegistroPagamento: diarioDeAula inválido");
+		}else {
+			this.diariosDeAula.add(diarioDeAula);
+		}
+	}
+	
+	
+
+}//InfoAula.

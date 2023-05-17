@@ -1,0 +1,70 @@
+
+public class InfoAula {
+	private int diaAula;
+	private String horaInicial; 
+	private String duracaoAula;
+	private int localAula;
+	private int valorHoraAula;
+	
+	//construtor
+	public InfoGeraisAula(int diaAula, String horaInicial, String duracaoAula, int localAula, int valorHoraAula) {
+		this.diaAula = diaAula;
+		this.horaInicial = horaInicial; 
+		this.duracaoAula= duracaoAula;
+		this.localAula= localAula;
+		this.valorHoraAula = valorHoraAula;
+	}
+	
+	
+	//getters & setters
+	public int getDiaAula() {
+		return diaAula;
+	}
+	
+	
+	public void setDiaAula(int diaAula) {
+		this.diaAula = diaAula;
+	}
+	
+	
+	public String getHoraInicial() {
+		return horaInicial;
+	}
+	
+	
+	public void setHoraInicial(String horaInicial) {
+		this.horaInicial = horaInicial;
+	}
+	
+	
+	public String getDuracaoAula() {
+		return duracaoAula;
+	}
+	
+	
+	public void setDuracaoAula(String duracaoAula) {
+		this.duracaoAula = duracaoAula;
+	}
+	
+	
+	public int getLocalAula() {
+		return localAula;
+	}
+	
+	
+	public void setLocalAula(int localAula) {
+		this.localAula = localAula;
+	}
+	
+	
+	public int getValorHoraAula() {
+		return valorHoraAula;
+	}
+	
+	
+	public void setValorHoraAula(int valorHoraAula) {
+		this.valorHoraAula = valorHoraAula;
+	}
+
+
+}//InfoGeraisAula.

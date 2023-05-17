@@ -1,0 +1,142 @@
+
+public class DiarioDeAula {
+	private String data;
+	private String horaIncial;
+	private String horaFinal;
+	private String tarefasDeCasa;
+	private String feedback;
+	private String dificuldades;
+	private String ideiasAulasFuturas;
+	private boolean pago;
+	private StatusAula statusAula;
+	private MaterialAula materialAula;
+	private RegistroPagamento registroPagamento;
+	
+	
+	//construtores
+	public DiarioDeAula(String data, String horaIncial, String horaFinal) {
+		setData(data);
+		setHoraIncial(horaIncial);
+		setHoraFinal(horaFinal);
+		setStatusAula(StatusAula.AGENDADA);//sempre começa como agendada e pode ser atualizada depois
+		setPago(false);//aula sempre começa como não paga, pode ser atualizado no dia do pagamento ou quando o status mudar para CANCELAMENTO
+	}
+
+	
+	//getters & setters
+	public String getData() {
+		return data;
+	}
+	
+	
+	public void setData(String data) {
+		this.data = data;
+	}
+	
+	
+	public String getHoraIncial() {
+		return horaIncial;
+	}
+	
+	
+	public void setHoraIncial(String horaIncial) {
+		this.horaIncial = horaIncial;
+	}
+	
+	
+	public String getHoraFinal() {
+		return horaFinal;
+	}
+	
+	
+	public void setHoraFinal(String horaFinal) {
+		this.horaFinal = horaFinal;
+	}
+	
+	
+	public String getTarefasDeCasa() {
+		return tarefasDeCasa;
+	}
+	
+	
+	public void setTarefasDeCasa(String tarefasDeCasa) {
+		this.tarefasDeCasa = tarefasDeCasa;
+	}
+	
+	
+	public String getFeedback() {
+		return feedback;
+	}
+	
+	
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+	}
+	
+	
+	public String getDificuldades() {
+		return dificuldades;
+	}
+	
+	
+	public void setDificuldades(String dificuldades) {
+		this.dificuldades = dificuldades;
+	}
+	
+	
+	public String getIdeiasAulasFuturas() {
+		return ideiasAulasFuturas;
+	}
+	
+	
+	public void setIdeiasAulasFuturas(String ideiasAulasFuturas) {
+		this.ideiasAulasFuturas = ideiasAulasFuturas;
+	}
+	
+	
+	public boolean isPago() {
+		return pago;
+	}
+	
+	
+	public void setPago(boolean pago) {
+		this.pago = pago;
+	}
+
+
+	public StatusAula getStatusAula() {
+		return statusAula;
+	}
+
+
+	public void setStatusAula(StatusAula statusAula) {
+		this.statusAula = statusAula;
+	}
+
+
+	public MaterialAula getMaterialAula() {
+		return materialAula;
+	}
+
+
+	public void setMaterialAula(MaterialAula materialAula) {
+		this.materialAula = materialAula;
+	}
+
+
+	public RegistroPagamento getRegistroPagamento() {
+		return registroPagamento;
+	}
+
+
+	public void setRegistroPagamento(RegistroPagamento registroPagamento) {
+		this.registroPagamento = registroPagamento;
+	}
+	
+	
+	
+	
+	
+	
+	
+}//DiarioDeAula.

@@ -1,0 +1,106 @@
+
+public class InfoAula {
+	private String diaSemana;
+	private String horaInicial; 
+	private int duracaoAula;
+	private float valorHoraAula;
+	private String dataInicial;
+	private String dataFinal;
+	private LocalAula localAula;
+	private DiarioDeAula diarioDeAula;
+	
+	//construtor
+	public InfoAula(String diaSemana, String horaInicial, int duracaoAula, float valorHoraAula, String dataInicial, String dataFinal, LocalAula localAula) {
+		setDiaSemana(diaSemana);
+		setHoraInicial(horaInicial); 
+		setDuracaoAula(duracaoAula);
+		setValorHoraAula(valorHoraAula);
+		setDataInicial(dataInicial);
+		setDataFinal(dataFinal);
+		setLocalAula(localAula);
+	}
+	
+	
+	//getters & setters
+	public String getDiaSemana() {
+		return diaSemana;
+	}
+	
+	
+	public void setDiaSemana(String diaSemana) {
+		this.diaSemana = diaSemana;
+	}
+	
+	
+	public String getHoraInicial() {
+		return horaInicial;
+	}
+	
+	
+	public void setHoraInicial(String horaInicial) {
+		this.horaInicial = horaInicial;
+	}
+	
+	
+	public int getDuracaoAula() {
+		return duracaoAula;
+	}
+	
+	
+	public void setDuracaoAula(int duracaoAula) {
+		this.duracaoAula = duracaoAula;
+	}
+	
+	
+	public float getValorHoraAula() {
+		return valorHoraAula;
+	}
+	
+	
+	public void setValorHoraAula(float valorHoraAula) {
+		this.valorHoraAula = valorHoraAula;
+	}
+	
+	
+	public String getDataInicial() {
+		return dataInicial;
+	}
+
+
+	public void setDataInicial(String dataInicial) {
+		this.dataInicial = dataInicial;
+	}
+
+
+	public String getDataFinal() {
+		return dataFinal;
+	}
+
+
+	public void setDataFinal(String dataFinal) {
+		this.dataFinal = dataFinal;
+	}
+
+
+	public LocalAula getLocalAula() {
+		return localAula;
+	}
+
+
+	public void setLocalAula(LocalAula localAula) {
+		this.localAula = localAula;
+	}
+
+
+	public DiarioDeAula getDiarioDeAula() {
+		return diarioDeAula;
+	}
+
+
+	public void setDiarioDeAula(DiarioDeAula diarioDeAula) {
+		this.diarioDeAula = diarioDeAula;
+	}
+	
+	
+
+}//InfoAula.

@@ -1,0 +1,29 @@
+
+public class LocalAula {
+	private String descricaoLocal;
+	//private int tipoLocal;
+	
+	//construtor
+	
+	public LocalAula(String descrocaoLocal/* , int tipoLocal */){
+		setDescricaoLocal(descricaoLocal);
+		//tipo local
+	}
+	
+	//getters & setters
+	public String getDescricaoLocal() {
+		return descricaoLocal;
+	}
+	
+	public void setDescricaoLocal(String descricaoLocal) {
+		this.descricaoLocal = descricaoLocal;
+	}
+	
+	/*
+	 * public int getTipoLocal() { return tipoLocal; }
+	 * 
+	 * public void setTipoLocal(int tipoLocal) { this.tipoLocal = tipoLocal; }
+	 */
+	
+	
+}//LocalAula.

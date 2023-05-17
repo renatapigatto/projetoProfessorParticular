@@ -1,0 +1,63 @@
+
+import java.time.LocalDate;  
+
+
+public class RegistroPagamento {
+	private LocalDate dataPagamento;
+	private float valorPago; //obrigatório, checar se 0
+	private FormaPagamento formaPagamento; //obrigatório, checar se null
+	private DiarioDeAula diarioDeAula;//lista? multiplicidade 1..*
+	
+	
+	//construtor
+	public RegistroPagamento(LocalDate dataPagamento, float valorPago, FormaPagamento formaPagamento){
+		setDataPagamento(dataPagamento);//data do sistema
+		setValorPago(valorPago);
+		setFormaPagamento(formaPagamento);
+	}
+	
+	//getters & setters
+	public LocalDate getDataPagamento() {
+		return dataPagamento;
+	}
+	
+	public void setDataPagamento(LocalDate dataPagamento) {
+		this.dataPagamento = java.time.LocalDate.now();//data do sistema
+	}
+	
+	public float getValorPago() {
+		return valorPago;
+	}
+	
+	public void setValorPago(float valorPago) {
+		if(valorPago == 0) {
+			throw new RuntimeException("Erro RegistroPagamento: valorPago inválida");
+		}else {
+			this.valorPago = valorPago;
+		}
+	}
+
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
+	}
+
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		if(formaPagamento == null) {
+			throw new RuntimeException("Erro RegistroPagamento: formaPagamento inválida");
+		}else {
+			this.formaPagamento = formaPagamento;
+		}
+	}
+
+	public DiarioDeAula getDiarioDeAula() {
+		return diarioDeAula;
+	}
+
+	public void setDiarioDeAula(DiarioDeAula diarioDeAula) {
+		this.diarioDeAula = diarioDeAula;//multiplicidade 1..*, checar null?
+	}
+	
+	
+	
+	
+}//RegistroPagamento.

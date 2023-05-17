@@ -1,0 +1,25 @@
+
+public class dataPagamento {
+	private String dataPagamento;
+	private int valorPago;
+	//private int formaPagamento;
+	//aulas pagas
+	
+	public String getDataPagamento() {
+		return dataPagamento;
+	}
+	
+	public void setDataPagamento(String dataPagamento) {
+		this.dataPagamento = dataPagamento;
+	}
+	
+	public int getValorPago() {
+		return valorPago;
+	}
+	
+	public void setValorPago(int valorPago) {
+		this.valorPago = valorPago;
+	}
+	
+	
+}//dataPagamento.

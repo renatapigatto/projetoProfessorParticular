@@ -1,0 +1,22 @@
+
+public class MaterialAula {
+	private String descricaoMaterial;
+	//tipoMaterial
+	
+	//construtor
+	public MaterialAula(String descricaoMaterial/* , tipoMaterial */) {
+		setDescricaoMaterial(descricaoMaterial); 
+		//tipoMaterial
+	}
+	
+	//getters & setters
+	public String getDescricaoMaterial() {
+		return descricaoMaterial;
+	}
+
+	public void setDescricaoMaterial(String descricaoMaterial) {
+		this.descricaoMaterial = descricaoMaterial;
+	}
+	
+	
+}//MaterialAula.

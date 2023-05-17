@@ -1,0 +1,120 @@
+
+public class Aluno {
+	private String nome;
+	private String cpf;
+	private String dataNasc;
+	private String telefone;
+	private String email;
+	private String endereco;
+	private String nivel;
+	private String objetivoAprend;
+	private int situacao;
+	
+	
+	//construtores
+	public Aluno(String nome, String telefone) {
+		this.nome = nome;
+		this.telefone = telefone;
+		this.situacao = 3;//caso a situação não seja dita, será sempre prospecção
+	}
+	
+	
+	public Aluno(String nome, String telefone, int situacao) {
+		this.nome = nome;
+		this.telefone = telefone;
+		this.situacao = situacao;
+	}
+	
+	
+	//getters & setters
+		public String getNome() {
+		return nome;
+	}
+	
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	
+	public String getCpf() {
+		return cpf;
+	}
+	
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	
+	public String getDataNasc() {
+		return dataNasc;
+	}
+	
+	
+	public void setDataNasc(String dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+	
+	
+	public String getTelefone() {
+		return telefone;
+	}
+	
+	
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
+	public String getEndereco() {
+		return endereco;
+	}
+	
+	
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	
+	
+	public String getNivel() {
+		return nivel;
+	}
+	
+	
+	public void setNivel(String nivel) {
+		this.nivel = nivel;
+	}
+	
+	
+	public String getObjetivoAprend() {
+		return objetivoAprend;
+	}
+	
+	
+	public void setObjetivoAprend(String objetivoAprend) {
+		this.objetivoAprend = objetivoAprend;
+	}
+	
+	
+	public int getSituacao() {
+		return situacao;
+	}
+	
+	
+	public void setSituacao(int situacao) {
+		this.situacao = situacao;
+	}
+	
+				
+} //Aluno.

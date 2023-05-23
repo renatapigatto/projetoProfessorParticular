@@ -18,10 +18,10 @@ public class DiarioDeAula {
 	
 	
 	//construtores
-	public DiarioDeAula(int ano, int mes, int dia, int horaI, int minutoI, int horaF, int minutoF) {
-		setData(ano, mes, dia);
-		setHoraIncial(horaI, minutoI);
-		setHoraFinal(horaF, minutoF);
+	public DiarioDeAula(LocalDate data, LocalTime horaIncial, LocalTime horaFinal) {
+		setData(data);
+		setHoraIncial(horaIncial);
+		setHoraFinal(horaFinal);
 		setStatusAula(StatusAula.AGENDADA);//sempre começa como agendada e pode ser atualizada depois
 		setPago(false);//aula sempre começa como não paga, pode ser atualizado no dia do pagamento ou quando o status mudar para CANCELAMENTO
 	}
@@ -33,11 +33,11 @@ public class DiarioDeAula {
 	}
 	
 	
-	public void setData(int ano, int mes, int dia) {
-		if(dia == 00 || mes == 00 || ano == 0000) {
+	public void setData(LocalDate data) {
+		if(data == null) {
 			throw new RuntimeException("Erro DiarioDeAula: data inválida");
 		}else {
-			this.data = LocalDate.of(ano, mes, dia);
+			this.data = LocalDate.of(0, 0, 0); //o tipo LocalDate exige um valor, ver como inicializar
 		}
 	}
 	
@@ -47,11 +47,11 @@ public class DiarioDeAula {
 	}
 	
 	
-	public void setHoraIncial(int horaI, int minutoI) {
-		if(horaI == 0) {//meia noite seria hora 00, como testar se é nulo?
+	public void setHoraIncial(LocalTime horaIncial) {
+		if(horaIncial == null) {
 			throw new RuntimeException("Erro DiarioDeAula: horaIncial inválida");
 		}else {
-			this.horaIncial = LocalTime.of(horaI, minutoI);
+			this.horaIncial = LocalTime.of(0, 0);//o tipo LocalTime exige um valor, ver como inicializar
 		}
 	}
 	
@@ -61,11 +61,11 @@ public class DiarioDeAula {
 	}
 	
 	
-	public void setHoraFinal(int horaF, int minutoF) {
-		if(horaF == 0) {//meia noite seria hora 00, como testar se é nulo?
-			throw new RuntimeException("Erro DiarioDeAula: horaIncial inválida");
+	public void setHoraFinal(LocalTime horaFinal) {
+		if(horaFinal == null) {
+			throw new RuntimeException("Erro DiarioDeAula: horaFinal inválida");
 		}else {
-			this.horaFinal = LocalTime.of(horaF, minutoF);
+			this.horaFinal = LocalTime.of(0, 0);//o tipo LocalTime exige um valor, ver como inicializar
 		}
 	}
 	
@@ -155,5 +155,11 @@ public class DiarioDeAula {
 	public void setRegistroPagamento(RegistroPagamento registroPagamento) {
 		this.registroPagamento = registroPagamento;
 	}
-		
+	
+	
+	
+	
+	
+	
+	
 }//DiarioDeAula.

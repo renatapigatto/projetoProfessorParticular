@@ -16,13 +16,13 @@ public class InfoAula {
 
 	
 	//construtor
-	public InfoAula(String diaSemana, int horaI, int minutoI, int duracaoAula, float valorHoraAula, int anoI, int mesI, int diaI, int anoF, int mesF, int diaF, LocalAula localAula) {
+	public InfoAula(String diaSemana, LocalTime horaInicial, int duracaoAula, float valorHoraAula, LocalDate dataInicial, LocalDate dataFinal, LocalAula localAula) {
 		setDiaSemana(diaSemana);
-		setHoraInicial(horaI, minutoI); 
+		setHoraInicial(horaInicial); 
 		setDuracaoAula(duracaoAula);
 		setValorHoraAula(valorHoraAula);
-		setDataInicial(anoI, mesI, diaI);
-		setDataFinal(anoF, mesF, diaF);
+		setDataInicial(dataInicial);
+		setDataFinal(dataFinal);
 		setLocalAula(localAula);
 	}
 	
@@ -47,11 +47,11 @@ public class InfoAula {
 	}
 	
 	
-	public void setHoraInicial(int horaI, int minutoI) {
-		if (horaI == 00) {//meia noite seria hora 00, como testar se é nulo?
+	public void setHoraInicial(LocalTime horaInicial) {
+		if (horaInicial == null) {
 			throw new RuntimeException("Erro InfoAula: horaInicial inválido.");
 		}else {
-			this.horaInicial = LocalTime.of(horaI, minutoI);
+			this.horaInicial = LocalTime.of(0, 0);//o tipo LocalTime exige um valor, ver como inicializar
 		}
 	}
 	
@@ -89,11 +89,11 @@ public class InfoAula {
 	}
 
 
-	public void setDataInicial(int anoI, int mesI, int diaI) {
-		if (anoI == 0000 || mesI == 00 || diaI == 00) {
+	public void setDataInicial(LocalDate dataInicial) {
+		if (dataInicial == null) {
 			throw new RuntimeException("Erro InfoAula: dataInicial inválido.");
 		}else {
-			this.dataInicial = LocalDate.of(anoI, mesI, diaI);//o tipo LocalDate exige um valor, ver como inicializar
+			this.dataInicial = LocalDate.of(0, 0, 0);//o tipo LocalDate exige um valor, ver como inicializar
 		}
 	}
 
@@ -103,11 +103,11 @@ public class InfoAula {
 	}
 
 
-	public void setDataFinal(int anoF, int mesF, int diaF) {
-		if (anoF == 0000 || mesF == 00 || diaF == 00) {
+	public void setDataFinal(LocalDate dataFinal) {
+		if (dataFinal == null) {
 			throw new RuntimeException("Erro InfoAula: dataFinal inválido.");
 		}else {
-			this.dataFinal = LocalDate.of(anoF, mesF, diaF); 
+			this.dataFinal = LocalDate.of(0, 0, 0); //o tipo LocalDate exige um valor, ver como inicializar
 		}
 	}
 

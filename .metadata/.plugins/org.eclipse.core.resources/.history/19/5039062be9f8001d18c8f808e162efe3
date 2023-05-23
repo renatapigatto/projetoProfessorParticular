@@ -16,9 +16,9 @@ public class InfoAula {
 
 	
 	//construtor
-	public InfoAula(String diaSemana, int horaI, int minutoI, int duracaoAula, float valorHoraAula, int anoI, int mesI, int diaI, int anoF, int mesF, int diaF, LocalAula localAula) {
+	public InfoAula(String diaSemana, LocalTime horaInicial, int duracaoAula, float valorHoraAula, int anoI, int mesI, int diaI, int anoF, int mesF, int diaF, LocalAula localAula) {
 		setDiaSemana(diaSemana);
-		setHoraInicial(horaI, minutoI); 
+		setHoraInicial(horaInicial); 
 		setDuracaoAula(duracaoAula);
 		setValorHoraAula(valorHoraAula);
 		setDataInicial(anoI, mesI, diaI);
@@ -47,11 +47,11 @@ public class InfoAula {
 	}
 	
 	
-	public void setHoraInicial(int horaI, int minutoI) {
-		if (horaI == 00) {//meia noite seria hora 00, como testar se é nulo?
+	public void setHoraInicial(LocalTime horaInicial) {
+		if (horaInicial == null) {
 			throw new RuntimeException("Erro InfoAula: horaInicial inválido.");
 		}else {
-			this.horaInicial = LocalTime.of(horaI, minutoI);
+			this.horaInicial = LocalTime.of(0, 0);
 		}
 	}
 	

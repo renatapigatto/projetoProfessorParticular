@@ -32,10 +32,10 @@ public class Aluno {
 	}
 
 	public void setNome(String nome) {
-		if(nome == null) {
-			throw new RuntimeException("Erro aluno: Nome inválido.");
-		}else if(nome.length() >= 3) {
+		if (nome.length() >= 3) {//se tiver 3 caracteres não é null
 			this.nome = nome;
+		} else {
+			System.out.print("Nome inválido.");
 		}
 	}
 
@@ -44,11 +44,12 @@ public class Aluno {
 	}
 
 	public void setCpf(String cpf) {
-		if (cpf == null) {
-			throw new RuntimeException("Erro aluno: CPF inválido.");
-		}else if(cpf.length() == 11) {
+		if (cpf.length() == 11) {
 			this.cpf = cpf;
-		} 
+		} else {
+			System.out.print("CPF inválido.");
+		}
+
 	}
 
 	public String getDataNasc() {
@@ -64,11 +65,12 @@ public class Aluno {
 	}
 
 	public void setTelefone(String telefone) {
-		if(telefone ==  null) {
-			throw new RuntimeException("Erro aluno: Telefone inválido.");
-		}else if(telefone.length() == 9) { 
+		if (telefone.length() == 9) { //se tiver 9 caracteres não é null
 			this.telefone = telefone;
+		} else {
+			throw new RuntimeException("Erro aluno: Telefone inválido.");
 		}
+
 	}
 
 	public String getEmail() {
@@ -76,10 +78,10 @@ public class Aluno {
 	}
 
 	public void setEmail(String email) {
-		if (email == null) {
-			throw new RuntimeException("Erro aluno: E-mail inválido");
-		}else if(email.contains("@")) {
+		if (email.contains("@") && email.contains(".com")) {
 			this.email = email;
+		} else {
+			throw new RuntimeException("Erro aluno: E-mail inválido");
 		}
 	}
 
@@ -113,11 +115,7 @@ public class Aluno {
 	}
 
 	public void setSituacao(SituacaoAluno situacao) {
-		if(situacao == null) {
-			throw new RuntimeException("Erro Aluno: Situação inválida");
-		}else {
-			this.situacao = situacao;
-		}
+		this.situacao = situacao;
 	}
 
 	public List<InfoAula> getInfoAulas() {
@@ -125,7 +123,11 @@ public class Aluno {
 	}
 
 	public void addInfoAula(InfoAula infoAula) {
-		this.infoAulas.add(infoAula);
+		if(infoAula == null) {
+			throw new RuntimeException("Erro Aluni: infoAula inválido");
+		}else {
+			this.infoAulas.add(infoAula);
+		}
 	}
 	
 	

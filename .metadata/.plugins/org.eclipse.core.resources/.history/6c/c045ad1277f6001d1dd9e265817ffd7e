@@ -18,10 +18,10 @@ public class DiarioDeAula {
 	
 	
 	//construtores
-	public DiarioDeAula(int ano, int mes, int dia, int horaI, int minutoI, int horaF, int minutoF) {
-		setData(ano, mes, dia);
-		setHoraIncial(horaI, minutoI);
-		setHoraFinal(horaF, minutoF);
+	public DiarioDeAula(LocalDate data, LocalTime horaIncial, LocalTime horaFinal) {
+		setData(data);
+		setHoraIncial(horaIncial);
+		setHoraFinal(horaFinal);
 		setStatusAula(StatusAula.AGENDADA);//sempre começa como agendada e pode ser atualizada depois
 		setPago(false);//aula sempre começa como não paga, pode ser atualizado no dia do pagamento ou quando o status mudar para CANCELAMENTO
 	}
@@ -34,7 +34,7 @@ public class DiarioDeAula {
 	
 	
 	public void setData(int ano, int mes, int dia) {
-		if(dia == 00 || mes == 00 || ano == 0000) {
+		if(dia == 0 || mes == 0 || ano == 0) {
 			throw new RuntimeException("Erro DiarioDeAula: data inválida");
 		}else {
 			this.data = LocalDate.of(ano, mes, dia);
@@ -47,11 +47,11 @@ public class DiarioDeAula {
 	}
 	
 	
-	public void setHoraIncial(int horaI, int minutoI) {
-		if(horaI == 0) {//meia noite seria hora 00, como testar se é nulo?
+	public void setHoraIncial(int hora, int minuto) {
+		if(hora == 0) {//meia noite seria hora 00, como testar se é nulo?
 			throw new RuntimeException("Erro DiarioDeAula: horaIncial inválida");
 		}else {
-			this.horaIncial = LocalTime.of(horaI, minutoI);
+			this.horaIncial = LocalTime.of(hora, minuto);
 		}
 	}
 	
@@ -61,11 +61,11 @@ public class DiarioDeAula {
 	}
 	
 	
-	public void setHoraFinal(int horaF, int minutoF) {
-		if(horaF == 0) {//meia noite seria hora 00, como testar se é nulo?
+	public void setHoraFinal(int hora, int minuto) {
+		if(hora == 0) {//meia noite seria hora 00, como testar se é nulo?
 			throw new RuntimeException("Erro DiarioDeAula: horaIncial inválida");
 		}else {
-			this.horaFinal = LocalTime.of(horaF, minutoF);
+			this.horaFinal = LocalTime.of(hora, minuto);
 		}
 	}
 	
@@ -155,5 +155,11 @@ public class DiarioDeAula {
 	public void setRegistroPagamento(RegistroPagamento registroPagamento) {
 		this.registroPagamento = registroPagamento;
 	}
-		
+	
+	
+	
+	
+	
+	
+	
 }//DiarioDeAula.

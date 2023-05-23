@@ -34,7 +34,7 @@ public class DiarioDeAula {
 	
 	
 	public void setData(int ano, int mes, int dia) {
-		if(dia == 00 || mes == 00 || ano == 0000) {
+		if(dia == 0 || mes == 0 || ano == 0) {
 			throw new RuntimeException("Erro DiarioDeAula: data inválida");
 		}else {
 			this.data = LocalDate.of(ano, mes, dia);
@@ -155,5 +155,11 @@ public class DiarioDeAula {
 	public void setRegistroPagamento(RegistroPagamento registroPagamento) {
 		this.registroPagamento = registroPagamento;
 	}
-		
+	
+	
+	
+	
+	
+	
+	
 }//DiarioDeAula.

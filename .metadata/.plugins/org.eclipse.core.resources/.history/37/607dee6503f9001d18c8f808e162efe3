@@ -5,18 +5,18 @@ import java.util.List;
 
 
 public class RegistroPagamento {
-	private LocalDate dataPagamento;//obrigatório, mas vai pegar a data do sistema, não tem como ser null
+	private LocalDate dataPagamento;
 	private float valorPago; //obrigatório, checar se 0
 	private FormaPagamento formaPagamento; //obrigatório, checar se null
 	private List<DiarioDeAula> diariosDeAula = new ArrayList<DiarioDeAula>();
 	
 	
 	//construtor
-	public RegistroPagamento(LocalDate dataPagamento, float valorPago, FormaPagamento formaPagamento, DiarioDeAula diarioDeAula){
+	public RegistroPagamento(LocalDate dataPagamento, float valorPago, FormaPagamento formaPagamento){
 		setDataPagamento(dataPagamento);//data do sistema
 		setValorPago(valorPago);
 		setFormaPagamento(formaPagamento);
-		addDiarioDeAula(diarioDeAula);//aqui estaria add só 1 diario de aula, mas o pagamento pode corresponder a mais de um
+		//diariosDeAula
 	}
 	
 	//getters & setters
